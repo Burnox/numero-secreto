@@ -2,8 +2,16 @@ function verificaChute(chute) {
   const numero = +chute
 
   if (chuteInvalido(numero)) {
-    elementoChute.innerHTML += '<div>ATENÇÃO: Você não falou um número!</div>'
-    return
+    if (chute === 'game over') {
+      document.body.innerHTML = `
+                                <h1> GAME OVER!</h1>
+                                <button id='restart' class='btn-restart'>RESTART</button>
+                              `
+      document.body.style.backgroundColor = 'red'
+    } else {
+      elementoChute.innerHTML += '<div>ATENÇÃO: Você não falou um número!</div>'
+      return
+    }
   }
 
   if (numeroForaDoRange(numero)) {
