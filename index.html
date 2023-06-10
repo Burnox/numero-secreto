@@ -20,24 +20,23 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- CSS PRÓPRIO -->
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Número Secreto</title>
   </head>
   <body>
     <h1>Qual é o número secreto?</h1>
     <h3>
-      Ele está entre <span id="menor-valor"></span> e
+      Dica 01: Está entre <span id="menor-valor"></span> e
       <span id="maior-valor"></span>.
     </h3>
-    <h4>(ative seu microfone)</h4>
-    <button id='btn-start'>START</button>
-    <button id='btn-stop'>STOP</button>
 
-    <div id="chute" class="menssagem">
-      <!-- <div>Seu palpite:</div>
-      <span class="box">20</span>
-      <div>O número secreto é maior <i class="fa-solid fa-arrow-up"></i></div> -->
-    </div>
+    <div id="chute" class="menssagem"></div>
+
+    <button id="microfone">
+      <img src="images/micro_microphone_4764.png" alt="microfone" srcset="" />
+    </button>
 
     <!-- Scripts JS -->
     <script src="app/sortearNumero.js"></script>

@@ -28,10 +28,10 @@ function verificaChute(chute) {
                               `
   } else if (numero > numeroSecreto) {
     elementoChute.innerHTML +=
-      '<div>Dica: Tente um número mais baixo. <i class="fa-solid fa-arrow-down"></i></div>'
+      '<div class="dica">Dica 02: Tente um número mais baixo. <i class="fa-solid fa-arrow-down"></i></div>'
   } else {
     elementoChute.innerHTML +=
-      '<div>Dica: Tente um número mais alto. <i class="fa-solid fa-arrow-up"></i></div>'
+      '<div class="dica">Dica 02: Tente um número mais alto. <i class="fa-solid fa-arrow-up"></i></div>'
   }
 }
 

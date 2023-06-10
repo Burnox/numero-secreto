@@ -1,16 +1,17 @@
 const elementoChute = document.querySelector('#chute')
+const microfone = document.querySelector('#microfone')
 
-//Assim que a página carregar a configuração de voz já estará ativa
-window.SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition
+microfone.addEventListener('click', () => {
+  const recognition = new (window.SpeechRecognition ||
+    window.webkitSpeechRecognition)()
+  recognition.lang = 'pt-BR'
 
-//Instanciado o reconhecimento de voz
-const recognition = new SpeechRecognition()
-recognition.lang = 'pt-BR'
-recognition.start()
+  recognition.start()
+  recognition.addEventListener('result', onSpeak)
 
-//Evento que exibe a mensagem assim que for detectado uma fala
-recognition.addEventListener('result', onSpeak)
+  //Encerra automáticamente a captura de áudio após um periodo de 5 segundos
+  setTimeout(() => recognition.stop(), 3000)
+})
 
 function onSpeak(fala) {
   //Dentro da variável results, existe um array 0, dentro dele outro array 0, por fim uma variável transcript onde está o resultado da fala.
@@ -26,5 +27,3 @@ function exibeChute(chute) {
         <span class="box">${chute}</span>
     `
 }
-
-recognition.addEventListener('end', () => recognition.start())
