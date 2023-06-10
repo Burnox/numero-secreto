@@ -9,14 +9,15 @@ function verificaChute(chute) {
                               `
       document.body.style.backgroundColor = 'red'
     } else {
-      elementoChute.innerHTML += '<div>ATENÇÃO: Você não falou um número!</div>'
+      elementoChute.innerHTML +=
+        '<div class="dica">ATENÇÃO: Você não falou um número!</div>'
       return
     }
   }
 
   if (numeroForaDoRange(numero)) {
     elementoChute.innerHTML +=
-      '<div>ATENÇÃO: O número deve estar dentro do limite!</div>'
+      '<div class="dica">ATENÇÃO: O número deve estar dentro do limite!</div>'
     return
   }
 
